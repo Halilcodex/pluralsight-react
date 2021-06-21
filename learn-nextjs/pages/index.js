@@ -1,19 +1,34 @@
 import React from 'react';
 import DigitalClock from '../src/DigitalClock';
+import axios from "axios"
+import Speakers from '../src/Speakers';
 
 class Index extends React.Component {
 
     static async getInitialProps () {
-        return ({
-            time: new Date().toISOString()
+        const promise = axios.get("http://localhost:4000/speakers").then(res => {
+            return {
+                hasError: false,
+                speakerData: res.data,
+                time: new Date().toISOString()
+            }
+        }).catch(err => {
+            return {
+                hasError: true,
+                message: err.message,
+                time: new Date().toISOString()
+            }
         })
+        return promise
     }
 
     constructor(props) {
         super(props);
         
         this.state = {
-            time: props.time
+            time: props.time,
+            speakers: props.speakerData,
+            message: props.message
         }
     }
 
@@ -39,6 +54,7 @@ class Index extends React.Component {
             <hr/>
             <br />
             <DigitalClock time={this.state.time}></DigitalClock>
+            <Speakers speakers={this.state.speakers} message={this.state.message} />
         </div>
     }
 }

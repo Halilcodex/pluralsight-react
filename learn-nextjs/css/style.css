@@ -1,19 +1,27 @@
 body {
   background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
   font-family: "Montserrat", "sans-serif";
-  min-height: 100vh;
+  min-height: 98.3vh;
   display: flex;
-  align-items: center;
+  padding-top: 20%;
+  box-sizing: border-box;
   justify-content: center;
+  text-align: center;
 }
 
 .clock {
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
   color: #17d4fe;
   font-size: 60px;
   font-family: Orbitron;
   letter-spacing: 7px;
+}
+
+.speakers {
+  position: absolute;
+  left: 100px;
+  text-align: left;
+}
+
+.error {
+  color: rgb(204, 58, 58);
 }
