@@ -25,3 +25,27 @@ body {
 .error {
   color: rgb(204, 58, 58);
 }
+
+.sessions {
+  margin-top: 0;
+  padding-top: 0
+}
+
+.sessions li {
+  margin: 10px;
+}
+
+.sessions b {
+  background-color: white;
+  /* padding: 5px; */
+}
+
+.session-button {
+  background-color: rgb(156, 85, 141);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.session-button:hover {
+  background-color: aliceblue;
+}
