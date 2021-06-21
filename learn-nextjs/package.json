@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "json-server": "json-server --watch db.json --port 4000 --delay 200"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,8 @@
   "description": "Welcome to learning all about SSR with Nextjs",
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
+    "axios": "^0.21.1",
+    "json-server": "^0.16.3",
     "next": "^11.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
