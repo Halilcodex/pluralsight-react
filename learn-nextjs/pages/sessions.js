@@ -38,14 +38,6 @@ export default class Sessions extends Component {
   render() {
     return (
       <div className="sessions">
-        <Link href="/">
-          <a
-            className="session-button"
-            style={{ position: "absolute", top: "50px" }}
-          >
-            Home
-          </a>
-        </Link>
         <ul>
           {this.state.sessions ? (
             this.state.sessions.map((item) => (

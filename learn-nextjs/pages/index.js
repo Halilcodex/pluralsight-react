@@ -1,28 +1,10 @@
 import React from "react";
 import DigitalClock from "../src/DigitalClock";
-import axios from "axios";
-import Speakers from "../src/Speakers";
 import Link from "next/link";
 
 class Index extends React.Component {
   static async getInitialProps() {
-    const promise = axios
-      .get("http://localhost:4000/speakers")
-      .then((res) => {
-        return {
-          hasError: false,
-          speakerData: res.data,
-          time: new Date().toISOString(),
-        };
-      })
-      .catch((err) => {
-        return {
-          hasError: true,
-          message: err.message,
-          time: new Date().toISOString(),
-        };
-      });
-    return promise;
+    return { time: new Date().toISOString() };
   }
 
   constructor(props) {
@@ -30,8 +12,6 @@ class Index extends React.Component {
 
     this.state = {
       time: props.time,
-      speakers: props.speakerData,
-      message: props.message,
     };
   }
 
@@ -57,19 +37,24 @@ class Index extends React.Component {
         <div
           style={{
             display: "flex",
+            width: "70vw",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
           <h1>Welcome to Next js</h1>
-          <Link href="/sessions">
-            <a className="session-button">SESSIONS</a>
-          </Link>
+          <div style={{display: "flex", justifyContent: "space-between", width: "25%"}}>
+            <Link href="/sessions">
+              <a className="session-button">SESSIONS</a>
+            </Link>
+            <Link href="/speakers">
+              <a className="session-button">SPEAKERS</a>
+            </Link>
+          </div>
         </div>
         <hr />
         <br />
         <DigitalClock time={this.state.time}></DigitalClock>
-        <Speakers speakers={this.state.speakers} message={this.state.message} />
       </div>
     );
   }

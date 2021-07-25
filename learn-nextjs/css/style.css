@@ -1,9 +1,11 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"); /*For normalizing css i.e. removing all browser specific stylings that might have been applied by default*/
+
 body {
-  background: linear-gradient(45deg, #1870ed 0, #f18f88 100%);
+  background: linear-gradient(45deg, #1870ed 0, #f18f88 100%) !important;
+  background-repeat: no-repeat;
   font-family: "Montserrat", "sans-serif";
   min-height: 98.3vh;
   display: flex;
-  padding-top: 20%;
   box-sizing: border-box;
   justify-content: center;
   text-align: center;
@@ -17,7 +19,7 @@ body {
 }
 
 .speakers {
-  position: absolute;
+  /* position: absolute; */
   left: 100px;
   text-align: left;
 }
@@ -38,14 +40,4 @@ body {
 .sessions b {
   background-color: white;
   /* padding: 5px; */
-}
-
-.session-button {
-  background-color: rgb(156, 85, 141);
-  padding: 20px;
-  border-radius: 20px;
-}
-
-.session-button:hover {
-  background-color: aliceblue;
 }
